@@ -2,22 +2,25 @@
 
 # Final Project for MSR
 
+## Overview
+The aim of this project is to design and build a system which will give a user control over an array of  <a href="http://hartmann.mech.northwestern.edu/index.php" target="blank">robotic rat whiskers</a>, and accurately and intuitively relate sensory information back in the form of haptic feedback.
+
 ## File Descriptions
 
-### main
-Main file. Initialize everything, interact with user to start/end tests and set important parameters
+### main.c
+Main file. Initialize everything, interact with user to start/end tests and set important parameters.
 
 ### control.c
-Main control loop. Reads data from whiskers and pressure sensor. Calculate error and adjust pump pressure accordingly
+Main control loop. Reads data from whiskers and pressure sensor. Calculate error and adjust pump pressure accordingly.
 
 ### adc.c
-Read value of the ADC in the PIC32
+Read value from the ADC on the PIC32
 
 ### mux.c
 Mux the value going into the ADC. So far this includes which pressure sensor is read, as well as which whisker.
 
 ### pot.c
-Control over the potentiometer using I2C (MCP4561 right now). The potentiometer is used to control the pressure the pump outputs.
+Control over the MCP4561 potentiometer using I2C. The potentiometer is used to control the pressure the pump outputs.
 
 ### whisker.c
 Read and process data coming from the whiskers.
