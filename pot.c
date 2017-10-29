@@ -4,7 +4,6 @@
  * Set to output any voltage between 0 - 3.3V
  */
 
-#include <xc.h>
 #include "pot.h"
 
 /* unsigned char pot_convert_volts(float volts) { */
@@ -29,7 +28,6 @@ void pot_set_resistance(int pump_num, int magnitude) {// magnitude: 0 - 100
   
   //The value sent to the pot is between 0 and 255
   unsigned char resistance = magnitude*255/100;
-  
   
   i2c_master_start(); //send start signal
   i2c_master_send((addr << 1)); //Send the address with a 0 bit to write
