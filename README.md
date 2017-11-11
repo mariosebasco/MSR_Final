@@ -16,9 +16,6 @@ Main control loop. Reads data from whiskers and pressure sensor. Calculate error
 ### adc.c
 Read value from the ADC on the PIC32
 
-### mux.c
-Mux the value going into the ADC. So far this includes which pressure sensor is read, as well as which whisker.
-
 ### pot.c
 Control over the MCP4561 potentiometer using I2C. The potentiometer is used to control the pressure the pump outputs.
 
