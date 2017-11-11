@@ -7,14 +7,10 @@
 
 #include "NU32.h"
 #include "pwm.h"
-//#include "gpio.h"
-#include "i2c.h"
-//#include "pot.h"
 #include "adc.h"
-//#include "mux.h"
 #include "control.h"
+#include "whisker.h"
 
-#define NUM_WHISKERS 3
 
 int main(void) {
 
@@ -22,27 +18,25 @@ int main(void) {
   NU32_Startup();
   pwm_init();
   i2c_init();
-  //gpio_init();
   adc_init();
+  whisker_init();
 
-  int i;
   int P = 1;
   char msg[100];
-  
+  unsigned int adc_data, whisker_output;
+  int pump_num = 1;
+    
   while(1) {
+
     //Testing
-    //For each whisker you are going to run one control iteration
-    for (i = 0; i < NUM_WHISKERS; i++) {
-      control_loop(i, P);
-      sprintf(msg, "Ran control iteration for whisker %d\r\n", i);
-      NU32_WriteUART3(msg);
-    }
+    control_loop(pump_num, P);
     
-    /* _CP0_SET_COUNT(0); */
-    /* while(_CP0_GET_COUNT() < 5000000) {} */
-    
-    
-  }
+  /*   adc_data = adc_get_volts(pin, 5); */
+  /*   sprintf(msg,"adc data: %d\r\n", adc_data); */
+  /*   NU32_WriteUART3(msg); */
+    _CP0_SET_COUNT(0);
+    while(_CP0_GET_COUNT() < 4000000) {}
+  } 
 
   return 0;
 }
