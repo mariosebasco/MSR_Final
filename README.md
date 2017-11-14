@@ -30,3 +30,6 @@ Control of the I2C 1 peripheral on the PIC32. Uses SDA1 (D9) SCL1 (D10).
 
 ### gpio.c
 External I/O expander control using I2C (MCP23008). Might not use in project.
+
+### imu.c and servo.c
+Files create to be able to control the whiskers at a distance. The gyroscope data from the user moving his hand will control the servo
