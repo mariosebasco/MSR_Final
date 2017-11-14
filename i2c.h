@@ -1,3 +1,12 @@
+/*
+ * I2C interface
+ * 100KHz, using SDA1 (D9) and SCL1 (D10)
+ * Connect to 3.3V through resistors and to the slave
+ *
+ *
+ */
+
+
 #ifndef I2C_MASTER_NOINT_H__
 #define I2C_MASTER_NOINT_H__
 

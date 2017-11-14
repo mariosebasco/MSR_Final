@@ -1,7 +1,6 @@
-
 /*
- * pwm controller - set frequency and duty cycle
- * freq range using prescaler set to 4: ~310HZ - 10MHz
+ * pwm controller - set frequency and duty cycle (D0)
+ * freq range using prescaler set to 16: ~20HZ - 0.625MHz
  * For different range, change the prescaler
  */
 
@@ -11,8 +10,8 @@ void pwm_init() {
 
   int counts = 849;              //for 23.5KHz
 
-  T2CONbits.TCKPS = 2;           //Timer 2 prescaler set to 4
-  PR2 = counts;                    //set the period
+  T2CONbits.TCKPS = 0b110;           //Timer 2 prescaler set to 64
+  PR2 = counts;                  //set the period
   TMR2 = 0;                      //start timer at 0
 
   OC1CONbits.OCM = 0b110;        //PWM mode without fault pin
@@ -25,7 +24,7 @@ void pwm_init() {
 }
 
 void pwm_set_freq(int freq) {
-  int PRVal = 20000000/freq;
+  int PRVal = 1250000/freq;
   int OCVal = PRVal/2;
 
   PR2 = PRVal;
