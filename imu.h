@@ -13,7 +13,7 @@
 
 //signed short data_array[7];
 
-void imu_init();
+float imu_init(signed short *data_array);
 signed short concatenate(unsigned char LOW, unsigned char HIGH);
 void imu_read(signed short *data_array);
 

@@ -9,7 +9,7 @@
 
 void whisker_init() {
   WHISKER1_BASELINE = adc_get_volts(Whisker_pins.whisker1_pin);
-  //WHISKER2_BASELINE = adc_get_volts(Whisker_pins.whisker2_pin);
+  WHISKER2_BASELINE = adc_get_volts(Whisker_pins.whisker2_pin);
   //WHISKER3_BASELINE = adc_get_volts(Whisker_pins.whisker3_pin);
 }
 

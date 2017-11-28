@@ -39,7 +39,7 @@ void control_loop(int pump_num, int P) {
   desired_pressure = whisker_get_data(whisker_num);
   if(desired_pressure < threshold) {
     //pot_set_resistance(pump_num, 0);
-    pwm_set_duty(0);
+    pwm_set_duty(0,read_pump);
   }
   else {
     error = desired_pressure - actual_pressure;
@@ -47,7 +47,7 @@ void control_loop(int pump_num, int P) {
     if(final_pressure > 100) {final_pressure = 100;}
     if(final_pressure < 0) {final_pressure = 0;}
 
-    pwm_set_duty(final_pressure);
+    pwm_set_duty(final_pressure, read_pump);
     //pot_set_resistance(final_pressure);
   }
 

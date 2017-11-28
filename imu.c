@@ -6,7 +6,7 @@
 
 #include "imu.h"
 
-void imu_init() {
+float imu_init(signed short *data_array) {
     //Need to change three registers
     i2c_master_start(); //send start signal
     i2c_master_send((IMU_SLAVE_ADDR << 1)); //Send the address with a 0 bit to write
@@ -25,6 +25,16 @@ void imu_init() {
     i2c_master_send(0x12);
     i2c_master_send(0x04);
     i2c_master_stop();
+
+    int i;
+    int total = 500;
+    float offset = 0.0;
+    for (i = 0;i < total; i++) {
+      imu_read(data_array);
+      offset += data_array[3]*0.0061;
+    }
+
+    return offset/total;
 }
 
 signed short concatenate(unsigned char LOW,unsigned char HIGH) {
@@ -68,13 +78,4 @@ void imu_read(signed short *data_array) {
     
     i2c_master_stop();
 
-}
-
-float imu_gyro_deg(float gyro_data) {
-
-  static float tot_deg = 0.0; //total degrees the gyro has turned per second
-
-  tot_deg += gyro_data;
-
-  return tot_deg;
 }
