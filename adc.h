@@ -25,6 +25,12 @@ struct _Whisker_pins {
   int whisker3_pin;
 } Whisker_pins;
 
+struct _Pot_pins {
+  int pot1_pin;
+  int pot2_pin;
+  int pot3_pin;
+} Pot_pins;
+
 void adc_init();
 unsigned int adc_sample_convert(int pin);
 unsigned int adc_get_volts(int pin);

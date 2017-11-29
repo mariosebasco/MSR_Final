@@ -1,5 +1,5 @@
 /*
- * adc functionality - using an0 (B0)
+ * adc functionality - starting at pin 0: AN0 (B0)
  *
  *
  */
@@ -18,6 +18,10 @@ void adc_init() {
   Whisker_pins.whisker1_pin = 3;
   Whisker_pins.whisker2_pin = 4;
   Whisker_pins.whisker3_pin = 5;
+
+  Pot_pins.pot1_pin = 6;
+  Pot_pins.pot2_pin = 7;
+  Pot_pins.pot3_pin = 8;
 }
 
 unsigned int adc_sample_convert(int pin) { // sample & convert the value on the given
