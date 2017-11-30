@@ -1,7 +1,6 @@
 /*
- * Potentiometer file
- * To be used to measure angle of rotation of the finger
- *
+ * Potentiometer to move the whiskers
+ * Uses AN6 - 7 (B6-7)
  *
  */
 
@@ -10,6 +9,6 @@
 
 #include "adc.h"
 
-int pot_get_deg(int pot_number);
+int pot_get_deg(int pot_num);
 
 #endif
