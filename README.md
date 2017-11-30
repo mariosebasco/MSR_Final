@@ -17,7 +17,7 @@ Main control loop. Reads data from whiskers and pressure sensor. Calculate error
 Read value from the ADC on the PIC32
 
 ### pot.c
-Control over the MCP4561 potentiometer using I2C. The potentiometer is used to control the pressure the pump outputs.
+potentiometer data is used in deciding how far the user has rotated his finger. From here we get degrees which is later passed on to the servo motors.
 
 ### whisker.c
 Read and process data coming from the whiskers.
