@@ -23,7 +23,7 @@ potentiometer data is used in deciding how far the user has rotated his finger. 
 Read and process data coming from the whiskers.
 
 ### pwm.c
-pwm control using OC1 and Timer 2 on the PIC32. Adjustable parameters include frequency and duty cycle.
+pwm control using OC1-4 and Timers 2-3 on the PIC32. Adjustable parameters include frequency and duty cycle.
 
 ### i2c.c
 Control of the I2C 1 peripheral on the PIC32. Uses SDA1 (D9) SCL1 (D10).
@@ -31,5 +31,8 @@ Control of the I2C 1 peripheral on the PIC32. Uses SDA1 (D9) SCL1 (D10).
 ### gpio.c
 External I/O expander control using I2C (MCP23008). Might not use in project.
 
-### imu.c and servo.c
-Files create to be able to control the whiskers at a distance. The gyroscope data from the user moving his hand will control the servo
+### imu.c
+Files created to be able to control the whiskers at a distance. The gyroscope data from the user moving his hand will control the servo. (using potentiometer instead of gyro)
+
+### servo.c
+Control of the servo motors used to move the rat whiskers.
