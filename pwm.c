@@ -1,5 +1,5 @@
 /*
- * pwm controller - set frequency and duty cycle (D0 - D4 for OC1 - OC4 resp.)
+ * pwm controller - set frequency and duty cycle (D0 - D3 for OC1 - OC4 resp.)
  * freq range using prescaler set to 16: ~20HZ - 0.625MHz
  * For different range, change the prescaler
  */

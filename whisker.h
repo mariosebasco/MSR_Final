@@ -11,9 +11,9 @@
 #include "NU32.h"
 #include "adc.h"
 
-int WHISKER1_BASELINE;
-int WHISKER2_BASELINE;
-int WHISKER3_BASELINE;
+unsigned int WHISKER1_BASELINE;
+unsigned int WHISKER2_BASELINE;
+unsigned int WHISKER3_BASELINE;
 
 void whisker_init();
 unsigned int whisker_get_data(int whisker_num);

@@ -29,7 +29,8 @@ void control_loop(int pump_num, int P) {
     read_pump = Pump_pins.pump3_pin;
     break;
   default:
-    read_pump = 1;
+    read_pump = 0;
+    break;
   }
 
   actual_pressure = adc_get_volts(read_pump);
