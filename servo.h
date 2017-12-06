@@ -11,6 +11,6 @@
 #include "pwm.h"
 
 //void servo_init();
-void servo_set_to_angle(int angle, int servo_num);
+void servo_set_to_angle(float angle, int servo_num);
 
 #endif

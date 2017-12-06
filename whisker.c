@@ -42,8 +42,8 @@ unsigned int whisker_get_data(int whisker_num) {
   whisker_data = adc_get_volts(read_whisker);
 
   whisker_output = abs(whisker_data - whisker_baseline)*gain;
-  sprintf(msg, "init: %d actual: %d diff: %d\r\n", whisker_baseline, whisker_data, whisker_output);
-  NU32_WriteUART3(msg);
+  /* sprintf(msg, "init: %d actual: %d diff: %d\r\n", whisker_baseline, whisker_data, whisker_output); */
+  /* NU32_WriteUART3(msg); */
 
   return whisker_output;
     

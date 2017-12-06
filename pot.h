@@ -9,6 +9,6 @@
 
 #include "adc.h"
 
-int pot_get_deg(int pot_num);
+float pot_get_deg(int pot_num);
 
 #endif

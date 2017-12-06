@@ -75,14 +75,27 @@ void pwm_set_duty(int duty_cycle, int device) {//pumps: 0-1 servos: 3:4
   case 1:
     OC2RS =  (unsigned int) ((duty_cycle/100.0) * PR2);
     break;
-  case 3:
-    OC3RS =  (unsigned int) ((duty_cycle/100.0) * PR3);
-    break;
-  case 4:
-    OC4RS =  (unsigned int) ((duty_cycle/100.0) * PR3);
-    break;
+  /* case 3: */
+  /*   OC3RS =  (unsigned int) ((((float) duty_cycle)/100.0) * PR3); */
+  /*   break; */
+  /* case 4: */
+  /*   OC4RS =  (unsigned int) ((((float) duty_cycle)/100.0) * PR3); */
+    /* break; */
   default:
     break;
   }
-    
+}
+
+void pwm_set_duty_servo(float duty_cycle, int device) {
+  switch(device) {
+  case 3:
+    OC3RS = (unsigned int) (duty_cycle/100.0 * ((float) PR3));
+    break;
+  case 4:
+    OC4RS = (unsigned int) (duty_cycle/100.0 * ((float) PR3));
+    break;
+  default:
+    OC3RS = (unsigned int) (duty_cycle/100.0 * ((float) PR3));
+    break;
+  }
 }
