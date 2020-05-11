@@ -1,8 +1,8 @@
 
 
-# Final Project for MSR. 
+# Final Project for MSR 
 
-## Overview
+## Overview. 
 The aim of this project is to design and build a system which will give a user control over an array of  <a href="http://hartmann.mech.northwestern.edu/index.php" target="blank">robotic rat whiskers</a>, and accurately and intuitively relate sensory information back in the form of haptic feedback.
 
 ## File Descriptions
